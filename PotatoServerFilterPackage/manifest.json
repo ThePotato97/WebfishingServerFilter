@@ -1,0 +1,9 @@
+{
+    "name": "Potato_ServerFilter",
+    "version_number": "0.0.1",
+    "website_url": "https://github.com/ThePotato97/WebfishingPotatoRadio",
+    "description": "For filtering dedicated and lure servers",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.12"
+    ]
+}

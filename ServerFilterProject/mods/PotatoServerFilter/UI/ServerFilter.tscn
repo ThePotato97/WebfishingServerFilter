@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=3]
+[ext_resource path="res://mods/PotatoServerFilter/UI/ServerFilter.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Panel2" type="Panel" parent="."]
+anchor_left = 0.204
+anchor_top = 0.085
+anchor_right = 0.804
+anchor_bottom = 0.186
+margin_left = 0.319977
+margin_top = 0.199997
+margin_right = 0.319946
+margin_bottom = 0.119995
+
+[node name="filter2" type="Panel" parent="Panel2"]
+anchor_left = 0.00986806
+anchor_top = 0.0647187
+anchor_right = 0.989535
+anchor_bottom = 0.935349
+margin_left = -0.368001
+margin_top = -0.0543423
+margin_right = 0.0559082
+margin_bottom = 0.0469971
+custom_styles/panel = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2/filter2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = -13.0
+margin_bottom = -6.0
+custom_constants/separation = 16
+alignment = 2
+
+[node name="Label" type="Label" parent="Panel2/filter2/HBoxContainer"]
+margin_top = 4.0
+margin_right = 667.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Potato
+Server Filters"
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="Panel2/filter2/HBoxContainer/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+header = "Search Filters"
+body = "Customize the server's you can quickly find. Maximum servers shown is 1000."
+
+[node name="dedicatedmatch" type="CheckBox" parent="Panel2/filter2/HBoxContainer"]
+margin_left = 683.0
+margin_right = 914.0
+margin_bottom = 79.0
+text = "HIDE NON-DEDICATED "
+
+[node name="lurematch" type="CheckBox" parent="Panel2/filter2/HBoxContainer"]
+margin_left = 930.0
+margin_right = 1105.0
+margin_bottom = 79.0
+text = "HIDE NON-LURE "
+
+[node name="fullmatch" type="CheckBox" parent="Panel2/filter2/HBoxContainer"]
+visible = false
+margin_left = 817.0
+margin_right = 942.0
+margin_bottom = 77.0
+text = "HIDE FULL "
+
+[node name="hidenames" type="CheckBox" parent="Panel2/filter2/HBoxContainer"]
+visible = false
+margin_left = 958.0
+margin_right = 1105.0
+margin_bottom = 77.0
+text = "HIDE NAMES "
